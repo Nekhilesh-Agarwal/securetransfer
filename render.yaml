@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: sentineldrop-api
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.15
+      - key: SENTINEL_DATA_DIR
+        value: /var/data
+      - key: DATABASE_URL
+        value: sqlite:////var/data/sentineldrop.db
+      - key: SENTINEL_DEVICE_NAME
+        value: SecureTransfer-Cloud
+      - key: SENTINEL_RATE_LIMIT_DISABLED
+        value: "0"
+      - key: ENABLE_ENCRYPTION_DEMO_LOG
+        value: "false"
+      - key: ENCRYPTION_DEMO_INCLUDE_PLAINTEXT
+        value: "false"
+      - key: SENTINEL_ALLOWED_ORIGINS
+        sync: false
+      - key: SENTINEL_ADMIN_USERNAME
+        sync: false
+      - key: SENTINEL_ADMIN_PASSWORD
+        sync: false
+    disk:
+      name: sentineldrop-data
+      mountPath: /var/data
+      sizeGB: 1

@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables / secrets
+.env
+*.env
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Cryptographic keys
+*.key
+*.pem
+
+# Logs
+*.log
+logs/
+
+# Packet captures
+*.pcap
+*.pcapng
+
+# Audio recordings
+recordings/
+*.wav
+*.mp3
+*.ogg
+
+# Uploaded/generated files
+uploads/
+temp/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SentinelDrop device identity
+keys/
+
+# Local pairing QR
+pairing_qr.png
+
+# Vosk speech recognition models
+models/vosk/
+
+# Local environments, state, and personal data
+.venv*/
+**/node_modules/
+**/__pycache__/
+.pytest_cache/
+*.db*
+*.sqlite*
+*.bak
+keys/
+storage/
+models/vosk/
+logs/
+recordings/
+.env
+*.env
+.DS_Store
+pairing_qr.png
+
